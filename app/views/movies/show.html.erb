@@ -18,6 +18,14 @@
       </div>
     </div>
 
+    <hr>
+      <% if session.fetch(:user_id) != nil %>
+      <form action="/insert_bookmark" method="post">
+        <button>
+          Bookmark this movie!
+        </button>
+      </form>
+      <% end %>
     <dl>
       <dt>
         Title
