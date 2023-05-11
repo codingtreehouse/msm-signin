@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   # Uncomment line 5 in this file and line 3 in UserAuthenticationController if you want to force users to sign in before any other actions.
   # before_action(:force_user_sign_in)
   
+  before_action(:load_current_user)
+
+  def load_current_user
+    @current_user = User.where({:id => session.fetch(:user_id)}).at(0)
+  end
+
   def load_current_user
     the_id = session[:user_id]
     

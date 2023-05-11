@@ -7,6 +7,13 @@ class MoviesController < ApplicationController
     render({ :template => "movies/index.html.erb" })
   end
 
+
+  #def add_user_bookmark
+  #  b = 
+    
+  
+  #end
+
   def show
     the_id = params.fetch("path_id")
 
